@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost and Found Home Page</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="home.html"><img src="images/LFname.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">HOW IT WORKS</a></li>
+                    <li><a href="">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        <div class="home-content">
+            <img src="images/LFlogo.png">
+            <h4>Lost something precious? Let's find it together.</h4>
+            <a href="">Browse for lost or found item</a><br>
+            <a href="">Report lost or found item</a>
+        </div>
+
+
+    </section>
+
+<!----------How it works--------->
+
+    <section class="howitworks">
+        <h1>How it works</h1>
+
+        <div class="row">
+            <div class="hiw-col">
+                <h3>To find lost item</h3>
+                <p>Step 1 : Click on Browse for lost item <br>
+                Step 2 : You will see latest reported lost items in feed search if anyone reported your item <br>
+                Step 3 : You can use search option on top of webpage which helps you to search with category and other filters</p>
+            </div>
+            <div class="hiw-col">
+                <h3>To report lost item if you can't find your item in feed</h3>
+                <p>Step 1 : Click on Report lost item button <br>
+                Step 2 : Fill all details it ask and submit <br>
+                Step 3 : Wait until someone finds it and replay your post</p>
+            </div>
+            <div class="hiw-col">
+                <h3>To report found item which does not belogs to you</h3>
+                <p>Step 1 : First search if anyone reported lost item which looks same as item you found in feed by 
+                    clicking Browse for lost item and setting search filter lost <br>
+                Step 2 : If no one reported then click on Report found item on home page <br>
+                Step 3 : Fill all details it ask and submit and wait untill they contact you
+                </p>
+            </div>
+        </div>
+    </section>
+<!--------- Footer --------->
+
+<section class="footer">
+    <h4>Contact Us</h4>
+    <div class="icons">
+        <i class="fa-solid fa-phone"></i>
+        <i class="fa-solid fa-envelope"></i>
+    </div>
+    <p>Made with <i class="fa-regular fa-heart"></i> by Bits 3rd year CSE Boys</p>
+</section>
+
+
+
+<!--------javaScript for Toggle menu-------->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right="0";
+        }
+        function hideMenu(){
+            navLinks.style.right="-200px"
+        }
+
+    </script>
+
+
+</body>
+</html>
