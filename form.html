@@ -1,0 +1,38 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Item</title>
+    <link rel="stylesheet" href="{% static 'helloapp/style2.css' %}">
+    <style> 
+    </style>
+</head>
+<body>
+    <div class="post-container">
+        
+        <form action="create_customer" class="post-info" method = "POST" >
+            {% csrf_token %}
+            <div class="post-tittle">
+                <h2>Report Item</h2>
+                <hr>
+                <h3>Enter item details</h3>
+                <textarea name="itemdetails" placeholder="Item Details" class="post-inputs" required></textarea>
+                <select name="select_type" aria-placeholder="Select type">
+                    <option value="disabled selected">Select type</option>
+                    <option value="LOST">LOST</option>
+                    <option value="FOUND">FOUND</option>
+                </select>
+                <h3>Contact info</h3>
+                
+                <input name = "name" type="text" placeholder="Your Name" Class="post-inputs" required><br>
+                <input name = "email" type="email" placeholder="Your email" Class="post-inputs" required><br>
+                <input  name = "mobilenumber" type="text" placeholder="Your mobile number" Class="post-inputs" required><br>
+                <input  name = "branch" type="text" placeholder="Your Branch" Class="post-inputs" required><br>
+                <button type="submit" >Submit</button>
+                
+                </div>
+        </form>
+    </div>
+</body>
+</html>
