@@ -1,0 +1,226 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Oswald", sans-serif;
+}
+body{
+    text-align: center;
+}
+nav {
+    background: rgb(193, 252, 134);
+    padding: 20px;
+}
+nav a{
+        border: none;
+        display: flex;
+        width: 50px;
+        padding: 0.75rem 1.5rem;
+        background-color: #c0ec48;
+        color: #ffffff;
+        font-size: 0.75rem;
+        line-height: 1rem;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+        vertical-align: middle;
+        align-items: center;
+        border-radius: 0.5rem;
+        user-select: none;
+        gap: 0.75rem;
+        box-shadow: 0 4px 6px -1px #488aec31, 0 2px 4px -1px #488aec17;
+        transition: all .6s ease;
+      }
+      
+      a:hover {
+        box-shadow: 0 10px 15px -3px #488aec4f, 0 4px 6px -2px #488aec17;
+      }
+      
+      a:focus,a:active {
+        opacity: .85;
+        box-shadow: none;
+      }
+.user{
+    background: rgb(131, 243, 19);
+    align-items: center;
+    padding: 10px;
+}
+.user i{
+    border-radius: 50%;
+    background: wheat;
+    padding: 20px;
+    
+}
+.user h3{
+    background: #fff;
+    border-radius: 20px;
+    margin: 5px;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.post {
+    padding: 10px;
+    width: 500px;
+    height: 430px;
+    margin-top: 50px;
+    margin-left: 350px;
+    border-radius: 30px;
+    background: #8cf5ab;
+    box-shadow: 15px 15px 30px #bebebe,
+               -15px -15px 30px #ffffff;
+    align-items: center;
+    text-align:justify;
+  }
+.content{
+    margin: 5%;
+    align-items: center;
+}
+.content h3 {
+    background: rgb(193, 252, 134);
+    padding: 2px;
+    border-radius: 30px;
+    align-items: center;
+    text-align: center;
+    width: 100px;
+    box-shadow: 15px 15px 30px #bebebe;
+    margin-bottom: 10px;
+}
+.content p{
+    border: 2px;
+    padding: 5px;
+    margin: 2px;
+}
+.field{
+    margin: 2px;
+    display: flex;
+}
+.field h5{
+    margin: 2px;
+    padding: 5px;
+}
+.content button {
+    --glow-color: rgb(176, 255, 196);
+    --glow-spread-color: rgba(123, 255, 145, 0.781);
+    --enhanced-glow-color: rgb(206, 255, 218);
+    --btn-color: rgb(7, 192, 7);
+    border: .25em solid var(--glow-color);
+    padding: 1em 3em;
+    color: var(--glow-color);
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em .25em var(--glow-color),
+           0 0 4em 1em var(--glow-spread-color),
+           inset 0 0 .75em .25em var(--glow-color);
+    text-shadow: 0 0 .5em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
+    margin-left: 150px;
+   }
+   
+  .content button::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(2em);
+    opacity: .7;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+   }
+   
+  .content button:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em .25em var(--glow-color),
+           0 0 4em 2em var(--glow-spread-color),
+           inset 0 0 .75em .25em var(--glow-color);
+   }
+   
+  .content button:active {
+    box-shadow: 0 0 0.6em .25em var(--glow-color),
+           0 0 2.5em 2em var(--glow-spread-color),
+           inset 0 0 .5em .25em var(--glow-color);
+   }
+   .Btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: rgb(255, 65, 65);
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* plus sign */
+  .sign {
+    width: 100%;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sign svg {
+    width: 17px;
+  }
+  
+  .sign svg path {
+    fill: white;
+  }
+  /* text */
+  .text {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition-duration: .3s;
+  }
+  /* hover effect on button width */
+  .Btn:hover {
+    width: 125px;
+    border-radius: 40px;
+    transition-duration: .3s;
+  }
+  
+  .Btn:hover .sign {
+    width: 30%;
+    transition-duration: .3s;
+    padding-left: 20px;
+  }
+  /* hover effect button's text */
+  .Btn:hover .text {
+    opacity: 1;
+    width: 70%;
+    transition-duration: .3s;
+    padding-right: 10px;
+  }
+  /* button click effect*/
+  .Btn:active {
+    transform: translate(2px ,2px);
+  }
+@media(max-width: 700px) {
+    .body{
+        width: auto;
+    }
+    .post{
+        margin-left: auto;
+    }    
+}
