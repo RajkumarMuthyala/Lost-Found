@@ -1,49 +1,43 @@
 from django.shortcuts import render,redirect
+from django.contrib.auth.models import User
+from django.contrib import messages
+from django.contrib.auth import authenticate,login
 
-from django.http import HttpResponse
-from .models import Customer_Details
-
-
-
-from django.shortcuts import render, redirect
-
-
- # Render the form template
-def home(request):
-    return render(request,'helloapp/home.html')
-def move_home(request):
-    return render(request,'home.html')
-def form(requst):
-    return render(requst,'helloapp/form.html')
-def create_customer(request):
+# Create your views here.
+def register(request):
     if request.method == 'POST':
-    # Retrieve form data (using a dictionary for clarity)
-        customer_data = {
-            'name':request.POST.get('name'),
-            'email': request.POST.get('email'),
-            'mobilenumber': request.POST.get('mobilenumber',''),
-            'branch': request.POST.get('branch', ''),  # Set a default empty string for optional branch
-            'itemdetails': request.POST.get('itemdetails'),
-            'select_type': request.POST.get('select_type'),
-        }
+        uname = request.POST.get('username')
+        pass1 = request.POST.get('password1')
+        pass2 = request.POST.get('password2')
 
-    # Form validation (optional but highly recommended)
-    # ... (implement form validation using Django forms or custom logic, if needed)
+        if pass1 != pass2 :
+            messages.warning(request, "Passwords are not matching")
+            return redirect('register')
+        try:
+            if User.objects.get(username=uname):
+                messages.warning(request, "Username already exist!")
+                return redirect('register')
+        except:
+            pass
 
-    # Create and save new customer object
-        new_customer = Customer_Details(**customer_data)
-        new_customer.save()
+        my_user = User.objects.create_user(uname,'',pass1)
+        my_user.save()
+        messages.success(request, "Registration successful!! Please Login!")
+        return redirect('/login')
 
-        return render(request, 'helloapp/success.html')   # Redirect to a success page (optional)
-    else:
-        return render(request, 'helloapp/form.html') 
+    return render(request, 'users/register.html')
 
+def login_user(request):
 
-def view_all_customers(request):
-  customers = Customer_Details.objects.all()  # Get all customer objects
-  context = {'customers': customers}
-  return render(request, 'helloapp/list.html', context)
-def list(requst):
-    return render(requst,'helloapp/list.html')
+    if request.method == 'POST' :
+        uname = request.POST.get('username')
+        pswd = request.POST.get('password')
+        user = authenticate(request, username=uname, password=pswd)
+        if user is not None:
+            login(request,user)
+            return redirect('lost_and_found-home')
+        else:
+            messages.warning(request, "Username  or password is incorrect!!")
+            return redirect('/login')
 
-
+    return render(request, 'users/login.html')
