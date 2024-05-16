@@ -1,0 +1,193 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Oswald", sans-serif;
+}
+body{
+    background: #f3fafa;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    background: rgb(193, 252, 134);
+    padding: 5px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.nav-left, .nav-right{
+    display: flex;
+    align-items: center;
+}
+.logo{
+    width: 160px;
+    height: 50px;
+    margin-right: 45px;
+    border-radius: 13%;
+}
+.post {
+    padding: 10px;
+    width: 500px;
+    height: 430px;
+    margin-top: 50px;
+    margin-left: 350px;
+    border-radius: 30px;
+    background: #8cf5ab;
+    box-shadow: 15px 15px 30px #bebebe,
+               -15px -15px 30px #ffffff;
+    align-items: center;
+  }
+.content{
+    margin: 5%;
+    align-items: center;
+}
+.content h3 {
+    background: rgb(193, 252, 134);
+    padding: 2px;
+    border-radius: 30px;
+    align-items: center;
+    text-align: center;
+    width: 100px;
+    box-shadow: 15px 15px 30px #bebebe;
+    margin-bottom: 10px;
+}
+.content p{
+    border: 2px;
+    padding: 5px;
+    margin: 2px;
+}
+.field{
+    margin: 2px;
+    display: flex;
+}
+.field h5{
+    margin: 2px;
+    padding: 5px;
+}
+.paste-button {
+    position: relative;
+    display: block;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 500px;
+  }
+  
+  .button {
+    background-color: #fff;
+    color: #212121;
+    padding: 5px 10px;
+    font-size: 15px;
+    font-weight: bold;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  .button i{
+    margin: 5px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    font-size: 13px;
+    position: absolute;
+    z-index: 1;
+    min-width: 200px;
+    background-color: #fff;
+    border: 2px solid #4CAF50;
+    border-radius: 0px 15px 15px 15px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+  
+  .dropdown-content a {
+    color: #4CAF50;
+    padding: 8px 10px;
+    text-decoration: none;
+    display: block;
+    transition: 0.1s;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #4CAF50;
+    color: #212121;
+  }
+  
+  .dropdown-content a:focus {
+    background-color: #212121;
+    color: #4CAF50;
+  }
+  
+  .dropdown-content #top:hover {
+    border-radius: 0px 13px 0px 0px;
+  }
+  
+  .dropdown-content #bottom:hover {
+    border-radius: 0px 0px 13px 13px;
+  }
+  
+  .paste-button:hover button {
+    border-radius: 15px 15px 0px 0px;
+  }
+  
+  .paste-button:hover .dropdown-content {
+    display: block;
+  }
+  .content button {
+    --glow-color: rgb(176, 255, 196);
+    --glow-spread-color: rgba(123, 255, 145, 0.781);
+    --enhanced-glow-color: rgb(206, 255, 218);
+    --btn-color: rgb(7, 192, 7);
+    border: .25em solid var(--glow-color);
+    padding: 1em 3em;
+    color: var(--glow-color);
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em .25em var(--glow-color),
+           0 0 4em 1em var(--glow-spread-color),
+           inset 0 0 .75em .25em var(--glow-color);
+    text-shadow: 0 0 .5em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
+    margin-left: 150px;
+   }
+   
+  .content button::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(2em);
+    opacity: .7;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+   }
+   
+  .content button:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em .25em var(--glow-color),
+           0 0 4em 2em var(--glow-spread-color),
+           inset 0 0 .75em .25em var(--glow-color);
+   }
+   
+  .content button:active {
+    box-shadow: 0 0 0.6em .25em var(--glow-color),
+           0 0 2.5em 2em var(--glow-spread-color),
+           inset 0 0 .5em .25em var(--glow-color);
+   }
+  @media(max-width: 700px){
+    .paste-button{
+      margin-left: 200px;
+    }
+    nav{
+      width: 700px;
+    }
+    .post{
+      margin-left: 50px;
+    }
+  }
